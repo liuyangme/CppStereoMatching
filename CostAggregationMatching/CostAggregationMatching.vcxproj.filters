@@ -54,6 +54,9 @@
     <ClCompile Include="src\WTA.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\Evaluate.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\AdaptiveWeightAggreagtion.h">
@@ -90,6 +93,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\WTA.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Evaluate.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

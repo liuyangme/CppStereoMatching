@@ -27,6 +27,7 @@
     <ClCompile Include="src\CostAggregationMatching.cpp" />
     <ClCompile Include="src\CrossBasedAggregation.cpp" />
     <ClCompile Include="src\CrossCheck.cpp" />
+    <ClCompile Include="src\Evaluate.cpp" />
     <ClCompile Include="src\medianFilter.cpp" />
     <ClCompile Include="src\NCCDisparity.cpp" />
     <ClCompile Include="src\PixelBasedCost.cpp" />
@@ -41,6 +42,7 @@
     <ClInclude Include="src\ConvolveImage.h" />
     <ClInclude Include="src\CrossBasedAggregation.h" />
     <ClInclude Include="src\CrossCheck.h" />
+    <ClInclude Include="src\Evaluate.h" />
     <ClInclude Include="src\medianFilter.h" />
     <ClInclude Include="src\NCCDisparity.h" />
     <ClInclude Include="src\PixelBasedCost.h" />
