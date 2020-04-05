@@ -6,15 +6,4 @@
 using namespace cv;
 using namespace std;
 
-int main() {
-	Mat lImg = imread("view1.png", 1);
-	Mat rImg = imread("view5.png", 1);
-	if (!lImg.data || !rImg.data) {
-		printf("Error: can not open image\n");
-		return -1;
-	}
-
-	return 0;
-}
-
 
