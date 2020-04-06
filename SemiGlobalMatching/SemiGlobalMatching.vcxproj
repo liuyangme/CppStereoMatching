@@ -20,6 +20,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\SemiGlobalMatching.cpp" />
+    <ClCompile Include="src\SGMfunction.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\SGMfunction.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
