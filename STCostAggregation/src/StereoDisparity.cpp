@@ -54,6 +54,7 @@ void stereo_routine(const char *left_input, const char *right_input, const char 
 	cv::imwrite(output, dispImg);
 }
 
+
 void stereo_disparity_normal(cv::InputArray left_image, cv::InputArray right_image, cv::OutputArray disp_, 
 					  int max_dis_level, int scale, float sigma) {
 	cv::Mat imL = left_image.getMat();

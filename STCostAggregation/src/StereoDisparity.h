@@ -30,6 +30,12 @@ THE SOFTWARE.
 #define __STEREO_DISPARITY_H__
 
 #include <opencv2/core/core.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/core/core.hpp>
+#include <opencv2/highgui/highgui.hpp>
+
+using namespace std;
+using namespace cv;
 
 enum METHOD {ST_RAW, ST_REFINED};
 void stereo_routine(const char *left_input, const char *right_input, const char *output, 

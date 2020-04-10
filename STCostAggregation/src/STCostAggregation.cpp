@@ -28,43 +28,41 @@ THE SOFTWARE.
 
 #include <cstdio>
 #include <string>
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/core/core.hpp>
+#include <opencv2/highgui/highgui.hpp>
 #include "StereoDisparity.h"
-using namespace std;
 
-std::string getFileName(const char* path) {
-	std::string str(path);
-	int pos = str.rfind('\\');
-	return str.substr(pos + 1, str.length() - pos);
-}
+using namespace std;
+using namespace cv;
+
+//std::string getFileName(const char* path) {
+//	std::string str(path);
+//	int pos = str.rfind('\\');
+//	return str.substr(pos + 1, str.length() - pos);
+//}
 
 int main(int argc, const char** argv) {
-	if (argc < 4) {
-		const char* head = "*****Segment-Tree based Cost Aggregation for Stereo Matching[CVPR2013]*****\n\n";
-		printf("%s", head);
-		printf("Usage:\n%s leftImgPath rightImgPath dispImgPath [maxLevel] [scale] [sigma] [method]\n", getFileName(argv[0]).c_str());
-		printf("maxDispLevel: default 60\nscale: default 4\nsigma: default 0.1\nnmethod: 0(defalut, ST-1) or 1(ST-2)\n");
-		exit(0);
-	}
+	
+	//if (argc < 4) {
+	//	const char* head = "*****Segment-Tree based Cost Aggregation for Stereo Matching[CVPR2013]*****\n\n";
+	//	printf("%s", head);
+	//	printf("Usage:\n%s leftImgPath rightImgPath dispImgPath [maxLevel] [scale] [sigma] [method]\n", getFileName(argv[0]).c_str());
+	//	printf("maxDispLevel: default 60\nscale: default 4\nsigma: default 0.1\nnmethod: 0(defalut, ST-1) or 1(ST-2)\n");
+	//	exit(0);
+	//}
 
 	int maxLevel = 60;
 	int scale = 4;
 	float sigma = 0.1f;
-	METHOD method = ST_RAW;
+	//METHOD method = ST_RAW;
+	METHOD method = ST_REFINED;
 
-	switch (argc) {
-	case 8: {
-		int m = 0;
-		sscanf(argv[7], "%d", &m);
-		if (m) {
-			method = ST_REFINED;
-		}}
-	case 7:
-		sscanf(argv[6], "%f", &sigma);
-	case 6:
-		sscanf(argv[5], "%d", &scale);
-	case 5:
-		sscanf(argv[4], "%d", &maxLevel);
-	};
+
+
+	argv[1] = "image/view1.png";
+	argv[2] = "image/view5.png";
+	argv[3] = "image/result.png";
 
 	stereo_routine(argv[1], argv[2], argv[3], maxLevel, scale, sigma, method);
 
