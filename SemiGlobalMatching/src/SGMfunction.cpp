@@ -14,7 +14,7 @@ using namespace cv;
 using namespace std;
 
 // Default parameters
-const int SGMSTEREO_DEFAULT_DISPARITY_TOTAL = 80;
+const int SGMSTEREO_DEFAULT_DISPARITY_TOTAL = 256;
 //const double SGMSTEREO_DEFAULT_DISPARITY_FACTOR = 256;
 const double SGMSTEREO_DEFAULT_DISPARITY_FACTOR = 1;
 const int SGMSTEREO_DEFAULT_SOBEL_CAP_VALUE = 15;
