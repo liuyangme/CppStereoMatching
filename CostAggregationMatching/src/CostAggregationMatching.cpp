@@ -48,18 +48,22 @@ int main(int argc, char** argv)
 		//Input(s)
 
 		//文件夹下的目录
-		string name[FileNumber] = { "Aloe", "Baby1", "Baby2", "Baby3", "Bowling1",
-		"Bowling2", "Cloth1", "Cloth2", "Cloth3", "Cloth4", "Flowerpots",
-		"Lampshade1", "Lampshade2", "Midd1", "Midd2", "Monopoly",
-		"Plastic", "Rocks1", "Rocks2", "Wood1", "Wood2" };
+		//string name[FileNumber] = { "Aloe", "Baby1", "Baby2", "Baby3", "Bowling1",
+		//"Bowling2", "Cloth1", "Cloth2", "Cloth3", "Cloth4", "Flowerpots",
+		//"Lampshade1", "Lampshade2", "Midd1", "Midd2", "Monopoly",
+		//"Plastic", "Rocks1", "Rocks2", "Wood1", "Wood2" };
+	
 
 		const time_t start = time(NULL);
 
 		for (int i = 0; i < FileNumber; i++) {
 
 			//读取images文件夹中的源图片
-			Mat left_image = imread("images/" + name[i] + "/view1.png", 0);
-			Mat right_image = imread("images/" + name[i] + "/view5.png", 0);
+			//Mat left_image = imread("images/" + name[i] + "/view1.png", 0);
+			//Mat right_image = imread("images/" + name[i] + "/view5.png", 0);
+
+			Mat left_image = imread("images/leftimage/000045_11.png", 0);
+			Mat right_image = imread("images/rightimage/000045_11.png", 0);
 
 			if ((!left_image.data) || (!right_image.data)) {
 				printf("Please input vaild image!\n");
@@ -74,8 +78,10 @@ int main(int argc, char** argv)
 			Mat LAB_left_image, LAB_right_image;
 			unsigned char* RGB_left_pnt, * RGB_right_pnt;
 			unsigned char* LAB_left_pnt, * LAB_right_pnt;
-			RGB_left_image = imread("images/" + name[i] + "/view1.png", 1);
-			RGB_right_image = imread("images/" + name[i] + "/view5.png", 1);
+			//RGB_left_image = imread("images/" + name[i] + "/view1.png", 1);
+			//RGB_right_image = imread("images/" + name[i] + "/view5.png", 1);
+			RGB_left_image = imread("images/leftimage/000045_11.png", 1);
+			RGB_right_image = imread("images/rightimage/000045_11.png", 1);
 			RGB_left_pnt = RGB_left_image.data;
 			RGB_right_pnt = RGB_right_image.data;
 			int rdim = left_image.rows;

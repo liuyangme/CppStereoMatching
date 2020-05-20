@@ -52,7 +52,7 @@ int main(int argc, const char** argv) {
 	//	exit(0);
 	//}
 
-	int maxLevel = 60;
+	int maxLevel = 256;
 	int scale = 4;
 	float sigma = 0.1f;
 	//METHOD method = ST_RAW;
@@ -60,9 +60,9 @@ int main(int argc, const char** argv) {
 
 
 
-	argv[1] = "image/view1.png";
-	argv[2] = "image/view5.png";
-	argv[3] = "image/result.png";
+	argv[1] = "image/leftimage/000146_11.png";
+	argv[2] = "image/rightimage/000146_11.png";
+	argv[3] = "image/000146_11_result.png";
 
 	stereo_routine(argv[1], argv[2], argv[3], maxLevel, scale, sigma, method);
 
