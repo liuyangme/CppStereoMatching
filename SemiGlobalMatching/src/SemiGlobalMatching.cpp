@@ -9,8 +9,8 @@ using namespace cv;
 using namespace std;
 
 int main() {
-	Mat lImg = imread("image/leftimage/000146_11.png", 1);
-	Mat rImg = imread("image/rightimage/000146_11.png", 1);
+	Mat lImg = imread("image/leftimage/000146_10.png", 1);
+	Mat rImg = imread("image/rightimage/000146_10.png", 1);
 	if (!lImg.data || !rImg.data) {
 		printf("Error: can not open image\n");
 		printf("\nPress any key to continue...\n");
@@ -23,7 +23,7 @@ int main() {
 	SGMStereo sgm;
 	sgm.compute(lImg, rImg, lDis);
 	imshow("Image", lDis);
-	imwrite("000146_11res.png", lDis);
+	imwrite("000146_10res.png", lDis);
 
 	return 0;
 

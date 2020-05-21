@@ -31,7 +31,7 @@ using namespace std;
 
 #define square(x) x*x
 #define round(x) (x<0?ceil((x)-0.5):floor((x)+0.5)) 
-#define FileNumber 21
+#define FileNumber 1
 
 ////////////////////////////////////////////////////////////////
 /////////////////////FUNCTION DECLERATIONS//////////////////////
@@ -88,7 +88,7 @@ int main(int argc, char** argv)
 			int cdim = left_image.cols;
 
 			//匹配参数选择
-			int dispRange = 80;//disparity range
+			int dispRange = 256;//disparity range
 			int costChoice1 = 3;//(1) AD, (2) Rank, (3) Census, (4) LoG 
 			int costChoice2 = 0;//(0) Single Cost (1) AD, (2) Rank, (3) Census (4) LoG
 			int aggrChoice = 3;//(1) Block, (2) Adaptive Weight, (3) Cross-Based
@@ -98,8 +98,8 @@ int main(int argc, char** argv)
 			//Aggregation Window Radius
 			int mask_Rad = 1;
 			//Census Mask Initialization
-			int maskHrad = 3;
-			int maskWrad = 2;
+			int maskHrad = 5;
+			int maskWrad = 3;
 			int maskT = (2 * maskHrad + 1) * (2 * maskWrad + 1);
 			//Rank Mask Initialization
 			int maskRankSize = 7;
@@ -282,15 +282,17 @@ int main(int argc, char** argv)
 			}
 
 			Mat show_image_color_L, show_image_color_R;
-			normalize(show_image_L, show_image_L, 0, 255, NORM_MINMAX);
-			normalize(show_image_R, show_image_R, 0, 255, NORM_MINMAX);
+			//normalize(show_image_L, show_image_L, 0, 255, NORM_MINMAX);
+			//normalize(show_image_R, show_image_R, 0, 255, NORM_MINMAX);
 			show_image_L = medianFilter(show_image_L, 3);
 			show_image_R = medianFilter(show_image_R, 3);
 			applyColorMap(show_image_L, show_image_color_L, COLORMAP_RAINBOW);
 			applyColorMap(show_image_R, show_image_color_R, COLORMAP_RAINBOW);
-			imwrite("resultImages/" + name[i] + "/" + name[i] + "_disp1_L.png", show_image_color_L);
-			imwrite("resultImages/" + name[i] + "/" + name[i] + "_disp5_R.png", show_image_color_R);
-			cout << "Matching " + name[i] + " is OK!\n\r";
+			//imwrite("resultImages/" + name[i] + "/" + name[i] + "_disp1_L.png", show_image_color_L);
+			//imwrite("resultImages/" + name[i] + "/" + name[i] + "_disp5_R.png", show_image_color_R);
+			//cout << "Matching " + name[i] + " is OK!\n\r";
+			imwrite("resultImages/000045_11_disp_L.png", show_image_L);
+			imwrite("resultImages/000045_11_disp_R.png", show_image_R);
 
 			//视差评估
 			//Mat standardLeft = imread("images/" + name[i] + "/disp1.png", -1);
