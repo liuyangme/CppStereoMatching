@@ -52,7 +52,7 @@ int main(int argc, const char** argv) {
 	//	exit(0);
 	//}
 
-	int maxLevel = 256;
+	int maxLevel = 128;
 	int scale = 4;
 	float sigma = 0.1f;
 	//METHOD method = ST_RAW;
