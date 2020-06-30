@@ -88,7 +88,7 @@ int main(int argc, char** argv)
 			int cdim = left_image.cols;
 
 			//匹配参数选择
-			int dispRange = 256;//disparity range
+			int dispRange = 64;//disparity range
 			int costChoice1 = 3;//(1) AD, (2) Rank, (3) Census, (4) LoG 
 			int costChoice2 = 0;//(0) Single Cost (1) AD, (2) Rank, (3) Census (4) LoG
 			int aggrChoice = 3;//(1) Block, (2) Adaptive Weight, (3) Cross-Based
@@ -291,8 +291,8 @@ int main(int argc, char** argv)
 			//imwrite("resultImages/" + name[i] + "/" + name[i] + "_disp1_L.png", show_image_color_L);
 			//imwrite("resultImages/" + name[i] + "/" + name[i] + "_disp5_R.png", show_image_color_R);
 			//cout << "Matching " + name[i] + " is OK!\n\r";
-			imwrite("resultImages/000045_11_disp_L.png", show_image_L);
-			imwrite("resultImages/000045_11_disp_R.png", show_image_R);
+			imwrite("resultImages/000045_11_disp_64CCL.png", show_image_L);
+			imwrite("resultImages/000045_11_disp_64CCR.png", show_image_R);
 
 			//视差评估
 			//Mat standardLeft = imread("images/" + name[i] + "/disp1.png", -1);
