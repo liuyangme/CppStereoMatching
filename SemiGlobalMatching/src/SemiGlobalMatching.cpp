@@ -9,12 +9,12 @@ using namespace cv;
 using namespace std;
 
 int main() {
-	Mat lImg = imread("image/leftimage/000045_10.png", 1);
-	Mat rImg = imread("image/rightimage/000045_10.png", 1);
+	Mat lImg = imread("image/leftimage/000146_10.png", 1);
+	Mat rImg = imread("image/rightimage/000146_10.png", 1);
 	if (!lImg.data || !rImg.data) {
 		printf("Error: can not open image\n");
 		printf("\nPress any key to continue...\n");
-		getchar();
+		system("pause");
 		return -1;
 	}
 	int hei = lImg.rows;
@@ -22,8 +22,7 @@ int main() {
 	Mat lDis = Mat::zeros(hei, wid, CV_32FC1);
 	SGMStereo sgm;
 	sgm.compute(lImg, rImg, lDis);
-	imshow("Image", lDis);
-	imwrite("000045_10res.png", lDis);
+	imwrite("image/resimage/000146_10_64res.png", lDis);
 
 	return 0;
 
