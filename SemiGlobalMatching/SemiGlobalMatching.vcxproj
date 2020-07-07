@@ -19,10 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="PreProcessing.cpp" />
     <ClCompile Include="src\SemiGlobalMatching.cpp" />
     <ClCompile Include="src\SGMfunction.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="PreProcessing.h" />
     <ClInclude Include="src\SGMfunction.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
