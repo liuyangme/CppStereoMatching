@@ -21,7 +21,7 @@
     <ClCompile Include="src\SGMfunction.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="PreProcessing.cpp">
+    <ClCompile Include="src\PreProcessing.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,7 +29,7 @@
     <ClInclude Include="src\SGMfunction.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="PreProcessing.h">
+    <ClInclude Include="src\PreProcessing.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
