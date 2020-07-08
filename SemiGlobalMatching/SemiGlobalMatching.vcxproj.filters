@@ -24,12 +24,18 @@
     <ClCompile Include="src\PreProcessing.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\PostProcessing.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\SGMfunction.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\PreProcessing.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PostProcessing.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
