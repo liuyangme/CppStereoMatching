@@ -9,7 +9,6 @@
 using namespace cv;
 using namespace std;
 
-
 void PostMedianFlitering(const Mat& src, Mat& dst) {
 	if (!src.data)return;
 	Mat _dst(src.size(), src.type());
