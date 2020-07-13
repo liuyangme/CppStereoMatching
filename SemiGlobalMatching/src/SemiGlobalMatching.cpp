@@ -14,8 +14,8 @@ using namespace std;
 int main() {
 
 	//load image
-	Mat lImg = imread("image/leftimage/000146_11.png", 1);
-	Mat rImg = imread("image/rightimage/000146_11.png", 1);
+	Mat lImg = imread("image/leftimage/000045_11.png", 1);
+	Mat rImg = imread("image/rightimage/000045_11.png", 1);
 	if (!lImg.data || !rImg.data) {
 		printf("Error: can not open image\n");
 		printf("\nPress any key to continue...\n");
@@ -41,8 +41,8 @@ int main() {
 	PostMedianFlitering(lDis, postlDis);
 
 	//export result
-	imwrite("image/resimage/000146_11_64res_row.png", lDis);
-	imwrite("image/resimage/000146_11_64res_post.png", postlDis);
+	imwrite("image/resimage/000045_11_64res_row-5.png", lDis);
+	imwrite("image/resimage/000045_11_64res_post-5.png", postlDis);
 
 	return 0;
 
