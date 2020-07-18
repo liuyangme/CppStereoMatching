@@ -15,8 +15,31 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="KITTI2015Evaluate.cpp">
+    <ClCompile Include="evaluate_scene_flow.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="evaluate_flow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="io_disp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="io_flow.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="io_integer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="log_colormap.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="mail.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <math.h>
+#include <algorithm>
 
 #include "mail.h"
 #include "io_flow.h"
