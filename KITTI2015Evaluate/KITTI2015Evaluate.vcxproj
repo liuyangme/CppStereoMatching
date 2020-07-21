@@ -18,18 +18,6 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="evaluate_flow.cpp" />
-    <ClCompile Include="evaluate_scene_flow.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="io_disp.h" />
-    <ClInclude Include="io_flow.h" />
-    <ClInclude Include="io_integer.h" />
-    <ClInclude Include="log_colormap.h" />
-    <ClInclude Include="mail.h" />
-    <ClInclude Include="utils.h" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{124F1AC5-EC39-4063-8F88-4AD2ADEB009F}</ProjectGuid>
