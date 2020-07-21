@@ -18,6 +18,12 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\evaluate.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\evaluate.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{124F1AC5-EC39-4063-8F88-4AD2ADEB009F}</ProjectGuid>
