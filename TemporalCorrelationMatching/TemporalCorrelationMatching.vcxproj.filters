@@ -18,9 +18,21 @@
     <ClCompile Include="src\TCM_main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\SGM_function.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MedianFilter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\TCM_main.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SGM_function.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MedianFilter.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

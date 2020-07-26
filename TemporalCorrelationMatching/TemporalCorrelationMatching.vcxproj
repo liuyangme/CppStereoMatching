@@ -19,9 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\MedianFilter.cpp" />
+    <ClCompile Include="src\SGM_function.cpp" />
     <ClCompile Include="src\TCM_main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\MedianFilter.h" />
+    <ClInclude Include="src\SGM_function.h" />
     <ClInclude Include="src\TCM_main.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
