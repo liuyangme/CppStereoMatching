@@ -24,6 +24,9 @@
     <ClCompile Include="src\MedianFilter.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\KITTI_evaluate.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\TCM_main.h">
@@ -33,6 +36,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\MedianFilter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KITTI_evaluate.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
