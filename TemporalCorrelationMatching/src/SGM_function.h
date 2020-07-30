@@ -6,6 +6,7 @@
 
 #include <bitset>
 #define CENSUS_BIT 80
+
 using namespace cv;
 
 

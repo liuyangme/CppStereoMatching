@@ -5,7 +5,6 @@
 #include <opencv2/highgui/highgui.hpp>
 
 using namespace cv;
-using namespace std;
 
 //主要是RGB图像和视差图像的数据类型有出入，后续考虑函数复用进行合并简化
 void PreMedianFlitering(const Mat& src, Mat& dst);

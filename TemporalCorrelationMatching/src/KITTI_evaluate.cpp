@@ -1,5 +1,7 @@
 #include "KITTI_Evaluate.h"
 
+using namespace std;
+
 void KITTIEvaluate(Mat standard, Mat myMap, Mat errorMap) {
 
 	//ÊÓ²î·¶Î§×ª»»

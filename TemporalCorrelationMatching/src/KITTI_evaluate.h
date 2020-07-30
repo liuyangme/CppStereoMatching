@@ -7,8 +7,6 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 
-using std::string;
 using namespace cv;
-using namespace std;
 
 void KITTIEvaluate(Mat standard, Mat myMap, Mat errorMap);
