@@ -10,7 +10,7 @@ int main() {
 	Mat lImg = imread("image/left_img/000048_10.png", 1);
 	Mat rImg = imread("image/right_img/000048_10.png", 1);
 	Mat GroundTruth = imread("image/disp_noc_0/000048_10.png", 0);  //_10
-	
+
 	if (!lImg.data || !rImg.data || !GroundTruth.data) {
 		printf("Error: can not open image\n");
 		printf("\nPress any key to continue...\n");
@@ -52,7 +52,7 @@ int main() {
 	KITTIEvaluate(GroundTruth, MyDisp, ErrorMap);
 	imwrite("image/disp_img/000048_10_res_64d_err.png", ErrorMap);
 	std::cout << "Image Evaluation Done!\n" << std::endl;
-	
+
 	return 0;
 
 }
