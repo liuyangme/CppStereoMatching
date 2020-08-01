@@ -23,7 +23,8 @@ public:
 	void setSmoothnessCostParameters(const int smoothnessPenaltySmall, const int smoothnessPenaltyLarge);
 	void setConsistencyThreshold(const int consistencyThreshold);
 
-	void compute(Mat& leftImage, Mat& rightImage, Mat& disparityImage);
+	//void compute(Mat& leftImage, Mat& rightImage, Mat& disparityImage);
+	void compute(Mat& leftImage, Mat& rightImage, Mat& disparityImage, Mat& leftRowDisparity, Mat& rightRowDisparity);
 
 private:
 	void initialize(const Mat& leftImage, const Mat& rightImage);

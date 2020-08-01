@@ -7,7 +7,7 @@ void KITTIEvaluate(Mat standard, Mat myMap, Mat errorMap) {
 	//ÊÓ²î·¶Î§×ª»»
 	for (int i = 0; i < standard.rows; i++) {
 		for (int j = 0; j < standard.cols; j++) {
-			standard.ptr<uchar>(i)[j] = standard.ptr<uchar>(i)[j] * 3;  //256--->64
+			standard.ptr<uchar>(i)[j] = standard.ptr<uchar>(i)[j] * 3;  // * 3 256--->64
 		}
 	}
 
@@ -32,5 +32,5 @@ void KITTIEvaluate(Mat standard, Mat myMap, Mat errorMap) {
 		}
 	}
 	double result = (count + 0.0) / sum;
-	cout << "Error rate = " << result * 100 << '%\n' << endl;
+	cout << "Error rate = " << result * 100 << "%\n" << endl;
 }

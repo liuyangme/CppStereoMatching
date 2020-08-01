@@ -10,15 +10,15 @@ using namespace cv;
 using namespace std;
 
 // Default parameters
-const int SGMSTEREO_DEFAULT_DISPARITY_TOTAL = 64;
-const double SGMSTEREO_DEFAULT_DISPARITY_FACTOR = 1;
+const int SGMSTEREO_DEFAULT_DISPARITY_TOTAL = 64;  //最大视差
+const double SGMSTEREO_DEFAULT_DISPARITY_FACTOR = 1;  //视差系数（用于缩放视差范围？）
 const int SGMSTEREO_DEFAULT_SOBEL_CAP_VALUE = 15;
-const int SGMSTEREO_DEFAULT_CENSUS_WINDOW_RADIUS = 4;
+const int SGMSTEREO_DEFAULT_CENSUS_WINDOW_RADIUS = 4;  //Census窗口大小
 const double SGMSTEREO_DEFAULT_CENSUS_WEIGHT_FACTOR = 1.0 / 6.0;
 const int SGMSTEREO_DEFAULT_AGGREGATION_WINDOW_RADIUS = 2;
 const int SGMSTEREO_DEFAULT_SMOOTHNESS_PENALTY_SMALL = 100;
 const int SGMSTEREO_DEFAULT_SMOOTHNESS_PENALTY_LARGE = 1600;
-const int SGMSTEREO_DEFAULT_CONSISTENCY_THRESHOLD = 5; //
+const int SGMSTEREO_DEFAULT_CONSISTENCY_THRESHOLD = 3; 
 
 
 SGMStereo::SGMStereo() : disparityTotal_(SGMSTEREO_DEFAULT_DISPARITY_TOTAL),
@@ -87,7 +87,7 @@ void SGMStereo::setConsistencyThreshold(const int consistencyThreshold) {
 	consistencyThreshold_ = consistencyThreshold;
 }
 
-void SGMStereo::compute(Mat& leftImage, Mat& rightImage, Mat& disparityImage)
+void SGMStereo::compute(Mat& leftImage, Mat& rightImage, Mat& disparityImage, Mat& leftRowDisparity, Mat& rightRowDisparity)
 {
 	initialize(leftImage, rightImage);
 
@@ -97,6 +97,20 @@ void SGMStereo::compute(Mat& leftImage, Mat& rightImage, Mat& disparityImage)
 	performSGM(leftCostImage_, leftDisparityImage);
 	unsigned short* rightDisparityImage = reinterpret_cast<unsigned short*>(malloc(width_ * height_ * sizeof(unsigned short)));
 	performSGM(rightCostImage_, rightDisparityImage);
+
+	for (int y = 0; y < height_; ++y) {
+		float* lDisData = (float*)leftRowDisparity.ptr<float>(y);
+		for (int x = 0; x < width_; ++x) {
+			lDisData[x] = static_cast<float>(leftDisparityImage[width_ * y + x] * 3);
+		}
+	}
+	for (int y = 0; y < height_; ++y) {
+		float* lDisData = (float*)rightRowDisparity.ptr<float>(y);
+		for (int x = 0; x < width_; ++x) {
+			lDisData[x] = static_cast<float>(rightDisparityImage[width_ * y + x] * 3);
+		}
+	}
+
 	enforceLeftRightConsistency(leftDisparityImage, rightDisparityImage);
 
 	for (int y = 0; y < height_; ++y) {
