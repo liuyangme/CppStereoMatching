@@ -21,12 +21,14 @@
   <ItemGroup>
     <ClCompile Include="src\KITTI_evaluate.cpp" />
     <ClCompile Include="src\MedianFilter.cpp" />
+    <ClCompile Include="src\Occlusion_filling.cpp" />
     <ClCompile Include="src\SGM_function.cpp" />
     <ClCompile Include="src\TCM_main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\KITTI_evaluate.h" />
     <ClInclude Include="src\MedianFilter.h" />
+    <ClInclude Include="src\Occlusion_filling.h" />
     <ClInclude Include="src\SGM_function.h" />
     <ClInclude Include="src\TCM_main.h" />
   </ItemGroup>
