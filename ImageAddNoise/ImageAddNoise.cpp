@@ -85,7 +85,7 @@ double generateGaussianNoise(double mu, double sigma)
 	return z0 * sigma + mu;
 }
 
-
+//加椒盐噪声
 Mat addSaltNoise(const Mat srcImage, int n)
 {
 	Mat dstImage = srcImage.clone();
