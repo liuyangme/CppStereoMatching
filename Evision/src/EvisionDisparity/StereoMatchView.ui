@@ -1,0 +1,2846 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>StereoMatchView</class>
+ <widget class="QWidget" name="StereoMatchView">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>585</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1000</width>
+    <height>585</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>匹配</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="2" column="2">
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="maximumSize">
+      <size>
+       <width>300</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="currentIndex">
+      <number>1</number>
+     </property>
+     <widget class="QWidget" name="page_BM">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QGroupBox" name="groupBox_19">
+         <property name="title">
+          <string>前处理</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_20">
+          <item>
+           <widget class="QRadioButton" name="radioButton_BM_Prefilter_Normalzed">
+            <property name="text">
+             <string>归一化</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioButton_BM_Prefilter_XSobel">
+            <property name="text">
+             <string>X方向SOBEL</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_20">
+         <property name="title">
+          <string>前处理参数</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_9">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_24">
+            <property name="text">
+             <string>归一化窗口大小:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QSpinBox" name="spinBox_BM_preFilterSize">
+            <property name="minimum">
+             <number>5</number>
+            </property>
+            <property name="maximum">
+             <number>255</number>
+            </property>
+            <property name="singleStep">
+             <number>2</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_25">
+            <property name="text">
+             <string>XSOBEL截断值</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QSpinBox" name="spinBox_BM_preFilterCap">
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>63</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_21">
+         <property name="title">
+          <string>BM</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_10">
+          <item row="1" column="1">
+           <widget class="QSpinBox" name="spinBox_BM_minDisparity">
+            <property name="minimum">
+             <number>-1</number>
+            </property>
+            <property name="maximum">
+             <number>128</number>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_26">
+            <property name="text">
+             <string>SAD代价窗口大小</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_29">
+            <property name="text">
+             <string>低纹理判断阈值</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QSpinBox" name="spinBox_BM_textureThreshold"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_28">
+            <property name="text">
+             <string>视差窗口</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QSpinBox" name="spinBox_BM_numDisparities">
+            <property name="minimum">
+             <number>16</number>
+            </property>
+            <property name="maximum">
+             <number>256</number>
+            </property>
+            <property name="singleStep">
+             <number>16</number>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QSpinBox" name="spinBox_BM_SADWindowSize">
+            <property name="minimum">
+             <number>5</number>
+            </property>
+            <property name="maximum">
+             <number>255</number>
+            </property>
+            <property name="singleStep">
+             <number>2</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_27">
+            <property name="text">
+             <string>视差搜索起点</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="label_30">
+            <property name="text">
+             <string>视差唯一度</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QSpinBox" name="spinBox_BM_uniquenessRatio"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_22">
+         <property name="title">
+          <string>后处理</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_11">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_31">
+            <property name="text">
+             <string>散斑滤波窗口大小</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QSpinBox" name="spinBox_BM_speckleWindowSize"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_33">
+            <property name="text">
+             <string>散斑窗口内的最大容差</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QSpinBox" name="spinBox_BM_speckleRange"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_34">
+            <property name="text">
+             <string>左右一致性检查的最大容差</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QSpinBox" name="spinBox_BM_disp12MaxDiff">
+            <property name="minimum">
+             <number>-1</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_SGBM">
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QGroupBox" name="groupBox_26">
+         <property name="title">
+          <string>模式</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QRadioButton" name="radioButton_SGBM_MODEL_3WAY">
+            <property name="text">
+             <string>SGBM_3WAY</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioButton_SGBM_MODEL_HH4">
+            <property name="text">
+             <string>HH4</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioButton_SGBM_MODEL_Default">
+            <property name="text">
+             <string>Default_SGBM</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioButton_SGBM_MODEL_HH">
+            <property name="text">
+             <string>HH</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_23">
+         <property name="title">
+          <string>前处理参数</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_21">
+          <item>
+           <widget class="QLabel" name="label_35">
+            <property name="text">
+             <string>预处理截断值</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="spinBox_SGBM_preFilterCap"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_24">
+         <property name="title">
+          <string>SGBM</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_8">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_36">
+            <property name="text">
+             <string>视差搜索起点</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QSpinBox" name="spinBox_SGBM_minDisparity"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_37">
+            <property name="text">
+             <string>视差窗口</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QSpinBox" name="spinBox_SGBM_numDisparities">
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>256</number>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_38">
+            <property name="text">
+             <string>匹配块大小</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QSpinBox" name="spinBox_SGBM_blockSize">
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="singleStep">
+             <number>2</number>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_39">
+            <property name="text">
+             <string>惩罚项P1</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QSpinBox" name="spinBox_SGBM_P1"/>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="label_40">
+            <property name="text">
+             <string>惩罚项P2</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QSpinBox" name="spinBox_SGBM_P2"/>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="label_41">
+            <property name="text">
+             <string>视差唯一度</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QSpinBox" name="spinBox_SGBM_uniquenessRatio"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_25">
+         <property name="title">
+          <string>后处理参数</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_12">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_42">
+            <property name="text">
+             <string>散斑滤波窗口大小</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QSpinBox" name="spinBox_SGBM_speckleWindowSize">
+            <property name="minimum">
+             <number>50</number>
+            </property>
+            <property name="maximum">
+             <number>200</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_43">
+            <property name="text">
+             <string>散斑窗口内的最大容差</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QSpinBox" name="spinBox_SGBM_speckleRange"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_44">
+            <property name="text">
+             <string>左右一致性检查的最大容差</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QSpinBox" name="spinBox_SGBM_disp12MaxDiff"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_ELAS">
+      <layout class="QGridLayout" name="gridLayout_6">
+       <item row="0" column="0">
+        <widget class="QScrollArea" name="scrollArea_2">
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents_2">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>233</width>
+            <height>590</height>
+           </rect>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_7">
+           <item row="32" column="0">
+            <widget class="QLabel" name="label_62">
+             <property name="text">
+              <string>speckle_size</string>
+             </property>
+            </widget>
+           </item>
+           <item row="33" column="0">
+            <widget class="QLabel" name="label_63">
+             <property name="text">
+              <string>ipol_gap_width</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_32">
+             <property name="text">
+              <string>disp_min</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_47">
+             <property name="text">
+              <string>disp_max</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QSpinBox" name="spinBox_disp_max">
+             <property name="maximum">
+              <number>255</number>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QSpinBox" name="spinBox_disp_min">
+             <property name="maximum">
+              <number>255</number>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_48">
+             <property name="text">
+              <string>support_threshold</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBox_support_threshold">
+             <property name="maximum">
+              <double>10.000000000000000</double>
+             </property>
+             <property name="singleStep">
+              <double>0.010000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QSpinBox" name="spinBox_support_texture"/>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_49">
+             <property name="text">
+              <string>support_texture</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="0">
+            <widget class="QLabel" name="label_50">
+             <property name="text">
+              <string>candidate_stepsize</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="1">
+            <widget class="QSpinBox" name="spinBox_candidate_stepsize"/>
+           </item>
+           <item row="9" column="0">
+            <widget class="QLabel" name="label_51">
+             <property name="text">
+              <string>incon_window_size</string>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="1">
+            <widget class="QSpinBox" name="spinBox_incon_window_size"/>
+           </item>
+           <item row="11" column="0">
+            <widget class="QLabel" name="label_52">
+             <property name="text">
+              <string>incon_threshold</string>
+             </property>
+            </widget>
+           </item>
+           <item row="11" column="1">
+            <widget class="QSpinBox" name="spinBox_incon_threshold"/>
+           </item>
+           <item row="13" column="0">
+            <widget class="QLabel" name="label_53">
+             <property name="text">
+              <string>incon_min_support</string>
+             </property>
+            </widget>
+           </item>
+           <item row="13" column="1">
+            <widget class="QSpinBox" name="spinBox_incon_min_support"/>
+           </item>
+           <item row="15" column="0">
+            <widget class="QLabel" name="label_54">
+             <property name="text">
+              <string>grid_size</string>
+             </property>
+            </widget>
+           </item>
+           <item row="15" column="1">
+            <widget class="QSpinBox" name="spinBox_grid_size"/>
+           </item>
+           <item row="16" column="0">
+            <widget class="QLabel" name="label_55">
+             <property name="text">
+              <string>beta</string>
+             </property>
+            </widget>
+           </item>
+           <item row="16" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBox_beta">
+             <property name="maximum">
+              <double>10.000000000000000</double>
+             </property>
+             <property name="singleStep">
+              <double>0.010000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="17" column="0">
+            <widget class="QLabel" name="label_56">
+             <property name="text">
+              <string>gamma</string>
+             </property>
+            </widget>
+           </item>
+           <item row="17" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBox_gamma"/>
+           </item>
+           <item row="18" column="0">
+            <widget class="QLabel" name="label_57">
+             <property name="text">
+              <string>sigma</string>
+             </property>
+            </widget>
+           </item>
+           <item row="18" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBox_sigma">
+             <property name="maximum">
+              <double>10.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="19" column="0">
+            <widget class="QLabel" name="label_58">
+             <property name="text">
+              <string>sradius</string>
+             </property>
+            </widget>
+           </item>
+           <item row="19" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBox_sradius">
+             <property name="maximum">
+              <double>10.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="20" column="0">
+            <widget class="QLabel" name="label_59">
+             <property name="text">
+              <string>match_texture</string>
+             </property>
+            </widget>
+           </item>
+           <item row="20" column="1">
+            <widget class="QSpinBox" name="spinBox_match_texture"/>
+           </item>
+           <item row="21" column="1">
+            <widget class="QSpinBox" name="spinBox_lr_threshold"/>
+           </item>
+           <item row="21" column="0">
+            <widget class="QLabel" name="label_60">
+             <property name="text">
+              <string>lr_threshold</string>
+             </property>
+            </widget>
+           </item>
+           <item row="28" column="0">
+            <widget class="QLabel" name="label_61">
+             <property name="text">
+              <string>speckle_sim_threshold</string>
+             </property>
+            </widget>
+           </item>
+           <item row="28" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBox_speckle_sim_threshold"/>
+           </item>
+           <item row="32" column="1">
+            <widget class="QSpinBox" name="spinBox_speckle_size">
+             <property name="maximum">
+              <number>1000</number>
+             </property>
+            </widget>
+           </item>
+           <item row="33" column="1">
+            <widget class="QSpinBox" name="spinBox_ipol_gap_width">
+             <property name="maximum">
+              <number>10000</number>
+             </property>
+            </widget>
+           </item>
+           <item row="34" column="0">
+            <widget class="QCheckBox" name="checkBox_add_corners">
+             <property name="text">
+              <string>add_corners</string>
+             </property>
+            </widget>
+           </item>
+           <item row="35" column="0">
+            <widget class="QCheckBox" name="checkBox_subsampling">
+             <property name="text">
+              <string>subsampling</string>
+             </property>
+            </widget>
+           </item>
+           <item row="36" column="0">
+            <widget class="QCheckBox" name="checkBox_postprocess_only_left">
+             <property name="text">
+              <string>postprocess_only_left</string>
+             </property>
+            </widget>
+           </item>
+           <item row="37" column="0">
+            <widget class="QCheckBox" name="checkBox_filter_adaptive_mean">
+             <property name="text">
+              <string>filter_adaptive_mean</string>
+             </property>
+            </widget>
+           </item>
+           <item row="38" column="0">
+            <widget class="QCheckBox" name="checkBox_filter_median">
+             <property name="text">
+              <string>filter_median</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_ADCensus">
+      <layout class="QGridLayout" name="gridLayout_5">
+       <item row="0" column="0" colspan="2">
+        <widget class="QGroupBox" name="groupBox_18">
+         <property name="title">
+          <string>视差</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_19">
+          <property name="topMargin">
+           <number>3</number>
+          </property>
+          <property name="bottomMargin">
+           <number>3</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>最小视差</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="spinBox_dMin">
+            <property name="maximum">
+             <number>100</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>最大视差</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="spinBox_dMax">
+            <property name="maximum">
+             <number>100</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="2">
+        <widget class="QGroupBox" name="groupBox_9">
+         <property name="title">
+          <string>Cross-based代价聚合</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_4">
+          <property name="topMargin">
+           <number>3</number>
+          </property>
+          <property name="bottomMargin">
+           <number>3</number>
+          </property>
+          <item row="0" column="0" colspan="2">
+           <widget class="QLabel" name="label_11">
+            <property name="text">
+             <string>最大长度1</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="label_8">
+            <property name="text">
+             <string>聚合迭代数</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="2">
+           <widget class="QSpinBox" name="spinBox_aggregatingIterations"/>
+          </item>
+          <item row="1" column="2">
+           <widget class="QSpinBox" name="spinBox_maxLength2"/>
+          </item>
+          <item row="1" column="3" colspan="2">
+           <widget class="QLabel" name="label_9">
+            <property name="text">
+             <string>颜色阈值2</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="QLabel" name="label_12">
+            <property name="text">
+             <string>最大长度2</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="6">
+           <widget class="QSpinBox" name="spinBox_colorThreshold1"/>
+          </item>
+          <item row="0" column="2">
+           <widget class="QSpinBox" name="spinBox_maxLength1"/>
+          </item>
+          <item row="0" column="3" colspan="3">
+           <widget class="QLabel" name="label_10">
+            <property name="text">
+             <string>颜色阈值1</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="6">
+           <widget class="QSpinBox" name="spinBox_colorThreshold2"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="3" column="0" colspan="2">
+        <widget class="QGroupBox" name="groupBox_12">
+         <property name="title">
+          <string>图像单元优化</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_13">
+          <property name="topMargin">
+           <number>3</number>
+          </property>
+          <property name="bottomMargin">
+           <number>3</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_13">
+            <property name="text">
+             <string>色差</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="spinBox_colorDifference"/>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_15">
+            <property name="text">
+             <string>pi1</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDoubleSpinBox" name="doubleSpinBox_pi1"/>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_14">
+            <property name="text">
+             <string>pi2</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDoubleSpinBox" name="doubleSpinBox_pi2"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QGroupBox" name="groupBox_14">
+         <property name="title">
+          <string>离群点检测</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_15">
+          <property name="topMargin">
+           <number>3</number>
+          </property>
+          <property name="bottomMargin">
+           <number>3</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_16">
+            <property name="text">
+             <string>dispTolerance</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="spinBox_dispTolerance"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QGroupBox" name="groupBox_15">
+         <property name="title">
+          <string>插值</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_16">
+          <property name="topMargin">
+           <number>3</number>
+          </property>
+          <property name="bottomMargin">
+           <number>3</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_19">
+            <property name="text">
+             <string>搜索深度</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="spinBox_maxSearchDepth"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="5" column="0" colspan="2">
+        <widget class="QGroupBox" name="groupBox_13">
+         <property name="title">
+          <string>迭代区域投票</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_14">
+          <property name="topMargin">
+           <number>3</number>
+          </property>
+          <property name="bottomMargin">
+           <number>3</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_17">
+            <property name="text">
+             <string>投票阈值</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="spinBox_votingThreshold"/>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_18">
+            <property name="text">
+             <string>投票率阈值</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDoubleSpinBox" name="doubleSpinBox_votingRatioThreshold"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="6" column="0" colspan="2">
+        <widget class="QGroupBox" name="groupBox_16">
+         <property name="title">
+          <string>深度不连续性</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_17">
+          <property name="topMargin">
+           <number>3</number>
+          </property>
+          <property name="bottomMargin">
+           <number>3</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_22">
+            <property name="text">
+             <string>canny核</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="spinBox_cannyKernelSize"/>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_20">
+            <property name="text">
+             <string>阈值1</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="spinBox_cannyThreshold1"/>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_21">
+            <property name="text">
+             <string>阈值2</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="spinBox_cannyThreshold2"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="0" colspan="2">
+        <widget class="QGroupBox" name="groupBox_8">
+         <property name="title">
+          <string>代价初始化</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_3">
+          <property name="topMargin">
+           <number>3</number>
+          </property>
+          <property name="bottomMargin">
+           <number>3</number>
+          </property>
+          <item row="1" column="3">
+           <widget class="QDoubleSpinBox" name="doubleSpinBox_lambdaAD"/>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLabel" name="label_6">
+            <property name="text">
+             <string>AD权重</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="label_7">
+            <property name="text">
+             <string>Census权重</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0" colspan="2">
+           <widget class="QLabel" name="label_5">
+            <property name="text">
+             <string>defaultBorderCost</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>census窗宽</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="2" colspan="2">
+           <widget class="QDoubleSpinBox" name="doubleSpinBox_defaultBorderCost">
+            <property name="decimals">
+             <number>3</number>
+            </property>
+            <property name="maximum">
+             <double>9.999000000000001</double>
+            </property>
+            <property name="singleStep">
+             <double>0.001000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QSpinBox" name="spinBox_censusWinW"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>census窗高</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QDoubleSpinBox" name="doubleSpinBox_lambdaCensus"/>
+          </item>
+          <item row="1" column="1">
+           <widget class="QSpinBox" name="spinBox_censusWinH"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="7" column="0" colspan="2">
+        <widget class="QGroupBox" name="groupBox_17">
+         <property name="title">
+          <string>亚像素增强</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_18">
+          <property name="topMargin">
+           <number>3</number>
+          </property>
+          <property name="bottomMargin">
+           <number>3</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_23">
+            <property name="text">
+             <string>blurKernelSize</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="spinBox_blurKernelSize"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QGraphicsView" name="graphicsView_D">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1" colspan="2">
+    <widget class="QFrame" name="frame">
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_12">
+      <item>
+       <widget class="QFrame" name="frame_8">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <property name="spacing">
+          <number>2</number>
+         </property>
+         <property name="leftMargin">
+          <number>2</number>
+         </property>
+         <property name="topMargin">
+          <number>2</number>
+         </property>
+         <property name="rightMargin">
+          <number>2</number>
+         </property>
+         <property name="bottomMargin">
+          <number>2</number>
+         </property>
+         <item>
+          <widget class="QRadioButton" name="radioButton_BM">
+           <property name="text">
+            <string>BM</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radioButton_SGBM">
+           <property name="text">
+            <string>SGBM</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radioButton_ELAS">
+           <property name="text">
+            <string>ELAS</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radioButton_ADC">
+           <property name="text">
+            <string>ADCensus</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="Line" name="line">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_MatchDefault">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>默认参数</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_MatchChooseFiles">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>视差计算</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_RefreshStereoMatch">
+        <property name="text">
+         <string>刷新</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_Save">
+        <property name="text">
+         <string>保存视差数据和视差示意图</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_Help">
+        <property name="text">
+         <string>帮助信息</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="0" rowspan="3">
+    <widget class="QFrame" name="frame_2">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>141</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <property name="leftMargin">
+       <number>2</number>
+      </property>
+      <property name="topMargin">
+       <number>2</number>
+      </property>
+      <property name="rightMargin">
+       <number>2</number>
+      </property>
+      <property name="bottomMargin">
+       <number>2</number>
+      </property>
+      <item>
+       <widget class="QGraphicsView" name="graphicsView_ImageL">
+        <property name="maximumSize">
+         <size>
+          <width>133</width>
+          <height>100</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="radioButton_ImageL">
+        <property name="text">
+         <string>左视图</string>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGraphicsView" name="graphicsView_ImageR">
+        <property name="maximumSize">
+         <size>
+          <width>133</width>
+          <height>100</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="radioButton_ImageR">
+        <property name="text">
+         <string>右视图</string>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGraphicsView" name="graphicsView_RawDisp">
+        <property name="maximumSize">
+         <size>
+          <width>133</width>
+          <height>100</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="radioButton_RawDisp">
+        <property name="text">
+         <string>视差图</string>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGraphicsView" name="graphicsView_Rainbow">
+        <property name="maximumSize">
+         <size>
+          <width>133</width>
+          <height>100</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="radioButton_Rainbow">
+        <property name="text">
+         <string>彩虹图</string>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton_MatchDefault</sender>
+   <signal>clicked()</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>setDefaultMatchParam()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>566</x>
+     <y>42</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>663</x>
+     <y>584</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_MatchChooseFiles</sender>
+   <signal>clicked()</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>doMatch()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>647</x>
+     <y>42</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>755</x>
+     <y>584</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_RefreshStereoMatch</sender>
+   <signal>clicked()</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>RefreshStereoMatch()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>728</x>
+     <y>42</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>858</x>
+     <y>584</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_ImageL</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>onClicked_IconImgL(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>85</x>
+     <y>114</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>153</x>
+     <y>109</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_ImageR</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>onClicked_IconImgR(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>87</x>
+     <y>222</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>153</x>
+     <y>218</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_RawDisp</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>onClicked_IconRawDisp(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>91</x>
+     <y>330</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>153</x>
+     <y>342</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_BM</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>onClicked_BM(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>169</x>
+     <y>38</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>66</x>
+     <y>2</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_SGBM</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>onClicked_SGBM(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>218</x>
+     <y>38</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>4</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_ELAS</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>onClicked_ELAS(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>267</x>
+     <y>38</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>271</x>
+     <y>3</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_ADC</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>onClicked_ADCensus(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>28</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>4</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_Save</sender>
+   <signal>clicked()</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>SaveDisparities()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>801</x>
+     <y>31</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>781</x>
+     <y>5</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_Help</sender>
+   <signal>clicked()</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>Help()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>941</x>
+     <y>30</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>925</x>
+     <y>4</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_dMin</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_DMin(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>737</x>
+     <y>84</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>724</x>
+     <y>56</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_dMax</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_DMax(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>771</x>
+     <y>84</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1032</x>
+     <y>75</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_censusWinW</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_CensusWinW(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>737</x>
+     <y>87</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>723</x>
+     <y>144</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_censusWinH</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_CensusWinH(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>737</x>
+     <y>87</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>724</x>
+     <y>186</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_lambdaCensus</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_LambdaCensus(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>771</x>
+     <y>87</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1033</x>
+     <y>125</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_lambdaAD</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_LambdaAD(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>771</x>
+     <y>87</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1032</x>
+     <y>158</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_defaultBorderCost</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_DefaultBorderCost(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>771</x>
+     <y>80</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1032</x>
+     <y>198</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_maxLength1</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_MaxLength1(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>790</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>724</x>
+     <y>224</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_maxLength2</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_MaxLength2(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>790</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>723</x>
+     <y>264</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_aggregatingIterations</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_AggregatingIterations(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>732</x>
+     <y>80</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>723</x>
+     <y>308</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_colorThreshold1</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_ColorThreshold1(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>790</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1033</x>
+     <y>239</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_colorThreshold2</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_ColorThreshold2(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>790</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1032</x>
+     <y>280</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_colorDifference</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_ColorDifference(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>790</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>723</x>
+     <y>348</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_pi1</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_Pi1(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>790</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>723</x>
+     <y>396</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_pi2</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_Pi2(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>790</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1031</x>
+     <y>328</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_dispTolerance</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_DispTolerance(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>790</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>723</x>
+     <y>445</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_maxSearchDepth</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_MaxSearchDepth(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>790</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1033</x>
+     <y>375</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_votingThreshold</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_VotingThreshold(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>790</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>724</x>
+     <y>484</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_votingRatioThreshold</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_VotingRatioThreshold(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>790</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1034</x>
+     <y>420</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_cannyKernelSize</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_CannyKernelSize(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>790</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>723</x>
+     <y>524</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_cannyThreshold1</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_CannyThreshold1(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>790</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1034</x>
+     <y>482</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_cannyThreshold2</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_CannyThreshold2(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>790</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1033</x>
+     <y>531</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_blurKernelSize</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_BlurKernelSize(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>790</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1035</x>
+     <y>594</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_disp_min</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_DMin(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>915</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>761</x>
+     <y>78</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_disp_max</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_DMax(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>915</x>
+     <y>115</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>762</x>
+     <y>112</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_support_threshold</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_SupportThreshold(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>915</x>
+     <y>141</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>763</x>
+     <y>150</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_support_texture</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_SupportTexture(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>915</x>
+     <y>167</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>761</x>
+     <y>192</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_candidate_stepsize</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_CandidateStepsize(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>915</x>
+     <y>193</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>762</x>
+     <y>228</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_incon_window_size</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_InconWindowSize(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>915</x>
+     <y>219</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>761</x>
+     <y>270</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_incon_threshold</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_InconThreshold(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>915</x>
+     <y>245</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>761</x>
+     <y>316</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_incon_min_support</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_InconMinSupport(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>915</x>
+     <y>271</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>763</x>
+     <y>354</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_grid_size</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_GridSize(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>915</x>
+     <y>297</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>762</x>
+     <y>392</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_beta</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_Beta(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>915</x>
+     <y>323</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>763</x>
+     <y>428</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_gamma</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_Gamma(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>915</x>
+     <y>349</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>762</x>
+     <y>464</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_sigma</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_Sigma(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>915</x>
+     <y>375</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>761</x>
+     <y>493</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_sradius</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_Sradius(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>915</x>
+     <y>401</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>763</x>
+     <y>532</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_match_texture</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_MatchTexture(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>915</x>
+     <y>427</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>761</x>
+     <y>569</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_lr_threshold</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_LrThreshold(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>915</x>
+     <y>453</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>762</x>
+     <y>619</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_speckle_sim_threshold</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_SpeckleSimThreshold(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>915</x>
+     <y>479</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>761</x>
+     <y>656</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_speckle_size</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_SpeckleSize(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>915</x>
+     <y>505</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>762</x>
+     <y>695</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_ipol_gap_width</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_IpolGapWidth(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>915</x>
+     <y>531</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>762</x>
+     <y>733</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_add_corners</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_AddCorners(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>849</x>
+     <y>553</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1071</x>
+     <y>671</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_subsampling</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_SubSampling(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>849</x>
+     <y>575</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1072</x>
+     <y>706</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_postprocess_only_left</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_PostprocessOnlyLeft(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>849</x>
+     <y>597</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1073</x>
+     <y>741</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_filter_adaptive_mean</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_FilterAdaptiveMean(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>849</x>
+     <y>619</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1071</x>
+     <y>741</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_filter_median</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_FilterMedian(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>849</x>
+     <y>641</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1069</x>
+     <y>741</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_BM_Prefilter_Normalzed</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_BM_preFilterType_NORMALIZED(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>737</x>
+     <y>90</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1167</x>
+     <y>23</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_BM_Prefilter_XSobel</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_BM_preFilterType_XSOBEL(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>771</x>
+     <y>90</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1166</x>
+     <y>56</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_BM_preFilterSize</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_BM_preFilterSize(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>771</x>
+     <y>94</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1168</x>
+     <y>99</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_BM_preFilterCap</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_BM_preFilterCap(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>771</x>
+     <y>88</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1166</x>
+     <y>137</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_BM_SADWindowSize</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_BM_SADWindowSize(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>771</x>
+     <y>98</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1167</x>
+     <y>182</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_BM_minDisparity</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_BM_minDisparity(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>771</x>
+     <y>95</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1168</x>
+     <y>218</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_BM_numDisparities</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_BM_numDisparities(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>771</x>
+     <y>92</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1167</x>
+     <y>257</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_BM_textureThreshold</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_BM_textureThreshold(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>771</x>
+     <y>88</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1168</x>
+     <y>297</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_BM_uniquenessRatio</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_BM_uniquenessRatio(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>771</x>
+     <y>85</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1166</x>
+     <y>336</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_BM_speckleWindowSize</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_BM_speckleWindowSize(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>771</x>
+     <y>102</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1166</x>
+     <y>378</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_BM_speckleRange</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_BM_speckleRange(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>771</x>
+     <y>97</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1167</x>
+     <y>420</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_BM_disp12MaxDiff</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_BM_disp12MaxDiff(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>771</x>
+     <y>92</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1167</x>
+     <y>460</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_SGBM_MODEL_3WAY</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_SGBM_MODEL_3WAY(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>902</x>
+     <y>95</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>859</x>
+     <y>64</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_SGBM_MODEL_HH4</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_SGBM_MODEL_HH4(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>891</x>
+     <y>123</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>858</x>
+     <y>101</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_SGBM_MODEL_Default</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_SGBM_MODEL_Default(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>915</x>
+     <y>146</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>859</x>
+     <y>138</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_SGBM_preFilterCap</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_SGBM_preFilterCap(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>970</x>
+     <y>231</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1165</x>
+     <y>170</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_SGBM_minDisparity</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_SGBM_minDisparity(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>970</x>
+     <y>289</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1166</x>
+     <y>207</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_SGBM_numDisparities</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_SGBM_numDisparities(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>970</x>
+     <y>315</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1167</x>
+     <y>246</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_SGBM_blockSize</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_SGBM_blockSize(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>970</x>
+     <y>341</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1167</x>
+     <y>288</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_SGBM_P1</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_SGBM_P1(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>970</x>
+     <y>367</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1169</x>
+     <y>328</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_SGBM_P2</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_SGBM_P2(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>970</x>
+     <y>393</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1167</x>
+     <y>364</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_SGBM_uniquenessRatio</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_SGBM_uniquenessRatio(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>970</x>
+     <y>419</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1167</x>
+     <y>404</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_SGBM_speckleWindowSize</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_SGBM_speckleWindowSize(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>970</x>
+     <y>477</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1167</x>
+     <y>446</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_SGBM_speckleRange</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_SGBM_speckleRange(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>970</x>
+     <y>503</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1166</x>
+     <y>488</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_SGBM_disp12MaxDiff</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_SGBM_disp12MaxDiff(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>970</x>
+     <y>529</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1165</x>
+     <y>560</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_SGBM_MODEL_HH</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>valueChanged_SGBM_MODEL_HH(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>742</x>
+     <y>163</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>995</x>
+     <y>116</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_Rainbow</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>StereoMatchView</receiver>
+   <slot>onClicked_IconRainbow(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>59</x>
+     <y>537</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>150</x>
+     <y>581</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>setDefaultMatchParam()</slot>
+  <slot>doMatch()</slot>
+  <slot>RefreshStereoMatch()</slot>
+  <slot>onClicked_BM(bool)</slot>
+  <slot>onClicked_SGBM(bool)</slot>
+  <slot>onClicked_IconImgL(bool)</slot>
+  <slot>onClicked_IconImgR(bool)</slot>
+  <slot>onClicked_IconRawDisp(bool)</slot>
+  <slot>onClicked_ELAS(bool)</slot>
+  <slot>onClicked_ADCensus(bool)</slot>
+  <slot>onClicked_RectifiedInput(bool)</slot>
+  <slot>SaveDisparities()</slot>
+  <slot>Help()</slot>
+  <slot>valueChanged_DMin(int)</slot>
+  <slot>valueChanged_DMax(int)</slot>
+  <slot>valueChanged_CensusWinH(int)</slot>
+  <slot>valueChanged_CensusWinW(int)</slot>
+  <slot>valueChanged_DefaultBorderCost(double)</slot>
+  <slot>valueChanged_LambdaAD(double)</slot>
+  <slot>valueChanged_LambdaCensus(double)</slot>
+  <slot>valueChanged_AggregatingIterations(int)</slot>
+  <slot>valueChanged_ColorThreshold1(int)</slot>
+  <slot>valueChanged_ColorThreshold2(int)</slot>
+  <slot>valueChanged_MaxLength1(int)</slot>
+  <slot>valueChanged_MaxLength2(int)</slot>
+  <slot>valueChanged_ColorDifference(int)</slot>
+  <slot>valueChanged_Pi1(double)</slot>
+  <slot>valueChanged_Pi2(double)</slot>
+  <slot>valueChanged_DispTolerance(int)</slot>
+  <slot>valueChanged_VotingThreshold(int)</slot>
+  <slot>valueChanged_VotingRatioThreshold(double)</slot>
+  <slot>valueChanged_MaxSearchDepth(int)</slot>
+  <slot>valueChanged_CannyThreshold1(int)</slot>
+  <slot>valueChanged_CannyThreshold2(int)</slot>
+  <slot>valueChanged_CannyKernelSize(int)</slot>
+  <slot>valueChanged_BlurKernelSize(int)</slot>
+  <slot>valueChanged_DispMin(int)</slot>
+  <slot>valueChanged_DispMax(int)</slot>
+  <slot>valueChanged_SupportThreshold(double)</slot>
+  <slot>valueChanged_SupportTexture(int)</slot>
+  <slot>valueChanged_InconWindowSize(int)</slot>
+  <slot>valueChanged_InconThreshold(int)</slot>
+  <slot>valueChanged_InconMinSupport(int)</slot>
+  <slot>valueChanged_AddCorners(bool)</slot>
+  <slot>valueChanged_GridSize(int)</slot>
+  <slot>valueChanged_Beta(double)</slot>
+  <slot>valueChanged_Gamma(double)</slot>
+  <slot>valueChanged_Sigma(double)</slot>
+  <slot>valueChanged_Sradius(double)</slot>
+  <slot>valueChanged_MatchTexture(int)</slot>
+  <slot>valueChanged_LrThreshold(int)</slot>
+  <slot>valueChanged_SpeckleSimThreshold(double)</slot>
+  <slot>valueChanged_SpeckleSize(int)</slot>
+  <slot>valueChanged_IpolGapWidth(int)</slot>
+  <slot>valueChanged_FilterMedian(bool)</slot>
+  <slot>valueChanged_FilterAdaptiveMean(bool)</slot>
+  <slot>valueChanged_PostprocessOnlyLeft(bool)</slot>
+  <slot>valueChanged_SubSampling(bool)</slot>
+  <slot>valueChanged_CandidateStepsize(int)</slot>
+  <slot>valueChanged_BM_preFilterType_NORMALIZED(bool)</slot>
+  <slot>valueChanged_BM_preFilterType_XSOBEL(bool)</slot>
+  <slot>valueChanged_BM_preFilterSize(int)</slot>
+  <slot>valueChanged_BM_preFilterCap(int)</slot>
+  <slot>valueChanged_BM_SADWindowSize(int)</slot>
+  <slot>valueChanged_BM_minDisparity(int)</slot>
+  <slot>valueChanged_BM_numDisparities(int)</slot>
+  <slot>valueChanged_BM_textureThreshold(int)</slot>
+  <slot>valueChanged_BM_uniquenessRatio(int)</slot>
+  <slot>valueChanged_BM_speckleRange(int)</slot>
+  <slot>valueChanged_BM_speckleWindowSize(int)</slot>
+  <slot>valueChanged_BM_disp12MaxDiff(int)</slot>
+  <slot>valueChanged_SGBM_minDisparity(int)</slot>
+  <slot>valueChanged_SGBM_numDisparities(int)</slot>
+  <slot>valueChanged_SGBM_blockSize(int)</slot>
+  <slot>valueChanged_SGBM_P1(int)</slot>
+  <slot>valueChanged_SGBM_P2(int)</slot>
+  <slot>valueChanged_SGBM_disp12MaxDiff(int)</slot>
+  <slot>valueChanged_SGBM_preFilterCap(int)</slot>
+  <slot>valueChanged_SGBM_uniquenessRatio(int)</slot>
+  <slot>valueChanged_SGBM_speckleWindowSize(int)</slot>
+  <slot>valueChanged_SGBM_speckleRange(int)</slot>
+  <slot>valueChanged_SGBM_MODEL_3WAY(bool)</slot>
+  <slot>valueChanged_SGBM_MODEL_HH4(bool)</slot>
+  <slot>valueChanged_SGBM_MODEL_Default(bool)</slot>
+  <slot>valueChanged_SGBM_MODEL_HH(bool)</slot>
+  <slot>onClicked_IconRainbow(bool)</slot>
+ </slots>
+</ui>
