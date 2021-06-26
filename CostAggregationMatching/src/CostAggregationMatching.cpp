@@ -62,8 +62,8 @@ int main(int argc, char** argv)
 			//Mat left_image = imread("images/" + name[i] + "/view1.png", 0);
 			//Mat right_image = imread("images/" + name[i] + "/view5.png", 0);
 
-			Mat left_image = imread("images/leftimage/000045_11.png", 0);
-			Mat right_image = imread("images/rightimage/000045_11.png", 0);
+			Mat left_image = imread("images/reL.bmp", 0);
+			Mat right_image = imread("images/reR.bmp", 0);
 
 			if ((!left_image.data) || (!right_image.data)) {
 				printf("Please input vaild image!\n");
@@ -80,17 +80,17 @@ int main(int argc, char** argv)
 			unsigned char* LAB_left_pnt, * LAB_right_pnt;
 			//RGB_left_image = imread("images/" + name[i] + "/view1.png", 1);
 			//RGB_right_image = imread("images/" + name[i] + "/view5.png", 1);
-			RGB_left_image = imread("images/leftimage/000045_11.png", 1);
-			RGB_right_image = imread("images/rightimage/000045_11.png", 1);
+			RGB_left_image = imread("images/reL.bmp", 1);
+			RGB_right_image = imread("images/reR.bmp", 1);
 			RGB_left_pnt = RGB_left_image.data;
 			RGB_right_pnt = RGB_right_image.data;
 			int rdim = left_image.rows;
 			int cdim = left_image.cols;
 
 			//匹配参数选择
-			int dispRange = 64;//disparity range
+			int dispRange = 128;//disparity range
 			int costChoice1 = 3;//(1) AD, (2) Rank, (3) Census, (4) LoG 
-			int costChoice2 = 0;//(0) Single Cost (1) AD, (2) Rank, (3) Census (4) LoG
+			int costChoice2 = 1;//(0) Single Cost (1) AD, (2) Rank, (3) Census (4) LoG
 			int aggrChoice = 3;//(1) Block, (2) Adaptive Weight, (3) Cross-Based
 			int autoScaleOrNot = 1;//1:Yes
 			float lambdaFirst = 1;
@@ -291,8 +291,8 @@ int main(int argc, char** argv)
 			//imwrite("resultImages/" + name[i] + "/" + name[i] + "_disp1_L.png", show_image_color_L);
 			//imwrite("resultImages/" + name[i] + "/" + name[i] + "_disp5_R.png", show_image_color_R);
 			//cout << "Matching " + name[i] + " is OK!\n\r";
-			imwrite("resultImages/000045_11_disp_64CCL.png", show_image_L);
-			imwrite("resultImages/000045_11_disp_64CCR.png", show_image_R);
+			imwrite("resultImages/L.bmp", show_image_L);
+			imwrite("resultImages/R.bmp", show_image_R);
 
 			//视差评估
 			//Mat standardLeft = imread("images/" + name[i] + "/disp1.png", -1);
