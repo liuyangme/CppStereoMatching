@@ -62,8 +62,8 @@ int main(int argc, char** argv)
 			//Mat left_image = imread("images/" + name[i] + "/view1.png", 0);
 			//Mat right_image = imread("images/" + name[i] + "/view5.png", 0);
 
-			Mat left_image = imread("images/reL24.bmp", 0);
-			Mat right_image = imread("images/reR24.bmp", 0);
+			Mat left_image = imread("images/L.bmp", 0);
+			Mat right_image = imread("images/R.bmp", 0);
 
 			if ((!left_image.data) || (!right_image.data)) {
 				printf("Please input vaild image!\n");
@@ -80,18 +80,18 @@ int main(int argc, char** argv)
 			unsigned char* LAB_left_pnt, * LAB_right_pnt;
 			//RGB_left_image = imread("images/" + name[i] + "/view1.png", 1);
 			//RGB_right_image = imread("images/" + name[i] + "/view5.png", 1);
-			RGB_left_image = imread("images/reL24.bmp", 1);
-			RGB_right_image = imread("images/reR24.bmp", 1);
+			RGB_left_image = imread("images/L.bmp", 1);
+			RGB_right_image = imread("images/R.bmp", 1);
 			RGB_left_pnt = RGB_left_image.data;
 			RGB_right_pnt = RGB_right_image.data;
 			int rdim = left_image.rows;
 			int cdim = left_image.cols;
 
 			//匹配参数选择
-			int dispRange = 256;//disparity range
+			int dispRange = 128;//disparity range
 			int costChoice1 = 3;//(1) AD, (2) Rank, (3) Census, (4) LoG 
-			int costChoice2 = 0;//(0) Single Cost (1) AD, (2) Rank, (3) Census (4) LoG
-			int aggrChoice = 1;//(1) Block, (2) Adaptive Weight, (3) Cross-Based
+			int costChoice2 = 1;//(0) Single Cost (1) AD, (2) Rank, (3) Census (4) LoG
+			int aggrChoice = 3;//(1) Block, (2) Adaptive Weight, (3) Cross-Based
 			int autoScaleOrNot = 1;//1:Yes
 			float lambdaFirst = 1;
 			float lambdaSecond = 1;
@@ -99,7 +99,7 @@ int main(int argc, char** argv)
 			int mask_Rad = 1;
 			//Census Mask Initialization
 			int maskHrad = 5;
-			int maskWrad = 7;
+			int maskWrad = 5;
 			int maskT = (2 * maskHrad + 1) * (2 * maskWrad + 1);
 			//Rank Mask Initialization
 			int maskRankSize = 7;
@@ -110,7 +110,7 @@ int main(int argc, char** argv)
 								0.046, 0.0061, -0.0923, 0.0061, 0.046,
 								0.0239, 0.046, 0.0499, 0.046, 0.0239 };
 			//Adaptive-Weight Parameters
-			int adapWinRad = 16;
+			int adapWinRad = 8;
 			float gamma_similarity = 7.0f;
 			float gamma_proximity = 36.0f;
 			int adapWinEdge = 2 * adapWinRad + 1;
@@ -291,8 +291,8 @@ int main(int argc, char** argv)
 			//imwrite("resultImages/" + name[i] + "/" + name[i] + "_disp1_L.png", show_image_color_L);
 			//imwrite("resultImages/" + name[i] + "/" + name[i] + "_disp5_R.png", show_image_color_R);
 			//cout << "Matching " + name[i] + " is OK!\n\r";
-			imwrite("resultImages/L24.bmp", show_image_L);
-			imwrite("resultImages/R24.bmp", show_image_R);
+			imwrite("resultImages/L.bmp", show_image_L);
+			imwrite("resultImages/R.bmp", show_image_R);
 
 			//视差评估
 			//Mat standardLeft = imread("images/" + name[i] + "/disp1.png", -1);

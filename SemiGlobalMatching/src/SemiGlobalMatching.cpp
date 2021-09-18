@@ -14,8 +14,8 @@ using namespace std;
 int main() {
 
 	//load image
-	Mat lImg = imread("image/leftimage/000045_11.png", 1);
-	Mat rImg = imread("image/rightimage/000045_11.png", 1);
+	Mat lImg = imread("image/leftimage/L.bmp", 1);
+	Mat rImg = imread("image/rightimage/R.bmp", 1);
 	if (!lImg.data || !rImg.data) {
 		printf("Error: can not open image\n");
 		printf("\nPress any key to continue...\n");
