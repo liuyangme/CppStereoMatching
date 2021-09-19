@@ -90,7 +90,7 @@ int main(int argc, char** argv)
 			//匹配参数选择
 			int dispRange = 128;//disparity range
 			int costChoice1 = 3;//(1) AD, (2) Rank, (3) Census, (4) LoG 
-			int costChoice2 = 1;//(0) Single Cost (1) AD, (2) Rank, (3) Census (4) LoG
+			int costChoice2 = 0;//(0) Single Cost (1) AD, (2) Rank, (3) Census (4) LoG
 			int aggrChoice = 3;//(1) Block, (2) Adaptive Weight, (3) Cross-Based
 			int autoScaleOrNot = 1;//1:Yes
 			float lambdaFirst = 1;
